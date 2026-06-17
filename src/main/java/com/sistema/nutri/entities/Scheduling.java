@@ -25,7 +25,7 @@ public class Scheduling
     private Long Id;
 
     @ManyToOne
-    @JoinColumn(name = "ID_PATIENT")
+    @JoinColumn(name = "ID_PATIENT", nullable = false)
     private Patient patient;
 
     @NotNull

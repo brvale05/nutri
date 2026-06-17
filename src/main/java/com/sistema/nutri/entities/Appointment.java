@@ -21,8 +21,12 @@ public class Appointment {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "ID_SCHEDULING")
+    @JoinColumn(name = "ID_SCHEDULING", nullable = false)
     private Scheduling scheduling;
+
+    @OneToOne
+    @JoinColumn(name = "ID_PATIENT", nullable = false)
+    private Patient patient;
 
     @NotNull
     private Double weight;

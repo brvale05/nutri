@@ -20,6 +20,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.aspectj.lang.annotation.Before;
 
 @Entity
 @Table(name = "tb_patient")
@@ -39,7 +40,7 @@ public class Patient {
 
     @NotNull
     @Size(min = 11, max = 11)
-    @Column(nullable = false, length = 11)
+    @Column(nullable = false, length = 11, unique = true)
     private String cpf;
 
     @NotNull
@@ -54,5 +55,18 @@ public class Patient {
     private EnumMainObjective objective;
 
     private List<String> food_restrictions = new ArrayList<>();
-    
+
+    @Override
+    public String toString()
+    {
+        return "Patient{" +
+                "Id=" + Id +
+                ", name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", phone_number='" + phone_number + '\'' +
+                ", birthDate=" + birthDate +
+                ", objective=" + objective +
+                ", food_restrictions=" + food_restrictions +
+                '}';
+    }
 }
