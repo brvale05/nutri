@@ -1,8 +1,7 @@
 package com.sistema.nutri.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +15,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Appointment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @OneToOne
+    @JoinColumn(name = "ID_SCHEDULING")
+    private Scheduling scheduling;
 
     @NotNull
     private Double weight;

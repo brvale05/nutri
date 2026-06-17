@@ -38,7 +38,7 @@ public class Patient {
     private String name;
 
     @NotNull
-    @Size(min = 11, max = 11, message = "CPF must have 11 caracteres")
+    @Size(min = 11, max = 11)
     @Column(nullable = false, length = 11)
     private String cpf;
 
