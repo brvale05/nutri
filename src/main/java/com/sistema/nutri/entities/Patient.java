@@ -20,7 +20,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.aspectj.lang.annotation.Before;
 
 @Entity
 @Table(name = "tb_patient")
@@ -40,7 +39,7 @@ public class Patient {
 
     @NotNull
     @Size(min = 11, max = 11)
-    @Column(nullable = false, length = 11, unique = true)
+    @Column(nullable = false, length = 11)
     private String cpf;
 
     @NotNull
