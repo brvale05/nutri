@@ -19,11 +19,22 @@ public class PatientService {
         this.repository = patientRepository;
     }
 
+    public PatientResponseDTO create(PatientCreateRequestDTO dto)
+    {
+        
+    }
+
     private PatientResponseDTO toResponse(Patient patient)
     {
         return PatientResponseDTO.builder()
-        .Id(patient.getId())
-        .build();
+                .Id(patient.getId())
+                .name(patient.getName())
+                .cpf(patient.getCpf())
+                .phone_number(patient.getPhone_number())
+                .birthDate(patient.getBirthDate())
+                .objective(patient.getObjective())
+                .food_restrictions(patient.getFood_restrictions())
+                .build();
     }
 
 }
