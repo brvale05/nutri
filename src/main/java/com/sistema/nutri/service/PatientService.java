@@ -19,10 +19,10 @@ public class PatientService {
         this.repository = patientRepository;
     }
 
-    public PatientResponseDTO create(PatientCreateRequestDTO dto)
-    {
-        
-    }
+//    public PatientResponseDTO create(PatientCreateRequestDTO dto)
+//    {
+//
+//    }
 
     private PatientResponseDTO toResponse(Patient patient)
     {
